@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <title>audio record</title>
+</head>
+
+<body>
+    <div class="app">
+        <button class="record-btn">开始录音</button>
+        <audio controls class="audio-player" src=":null/af6a9418-0a86-4633-b294-9787471211e8"></audio>
+    </div>
+    <script src="./recorder.js"></script>
+</body>
+
+</html>
+<!-- <script>
+    if (navigator.mediaDevices.getUserMedia) {
+        const constraints = {
+            audio: true
+        };
+        navigator.mediaDevices.getUserMedia(constraints).then(
+            stream => {
+                console.log("授权成功！");
+                const recordBtn = document.querySelector(".record-btn");
+                const mediaRecorder = new MediaRecorder(stream);
+                recordBtn.onclick = () => {
+                    if (mediaRecorder.state === "recording") {
+                        mediaRecorder.stop();
+                        recordBtn.textContent = "record";
+                        console.log("录音结束");
+                    } else {
+                        mediaRecorder.start();
+                        const chunks = [];
+                        mediaRecorder.ondataavailable = function (e) {
+                            chunks.push(e.data);
+                            // console.log(e.data)
+                        };
+                        console.log("录音中...");
+                        recordBtn.textContent = "stop";
+                    }
+                    console.log("录音器状态：", mediaRecorder.state);
+                };
+            },
+            () => {
+                console.error("授权失败！");
+            }
+        );
+    } else {
+        console.error("浏览器不支持 getUserMedia");
+    }
+</script> -->
+
+</html>
